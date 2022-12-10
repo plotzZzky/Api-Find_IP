@@ -1,6 +1,6 @@
 # Find_ip
 Api para checkar a localização de Ips com mapa e informações detalhadas.<p>
-Feito por um estudante python com flask e PostgreSql
+Feito por um estudante python com Django
 
 ![ip](https://user-images.githubusercontent.com/12895974/205460235-d8429485-244c-4b2a-99f6-014e3861736c.png)
 ![ip_b](https://user-images.githubusercontent.com/12895974/205460237-5f33992d-1ffb-4d29-9f1c-df57c80a8497.png)
