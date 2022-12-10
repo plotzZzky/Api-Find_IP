@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static  'styles.css' %}">
+    <script src="https://kit.fontawesome.com/71fde90bd7.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <script type=text/javascript src="{% static 'background.js' %}"></script>
+    {% block head %}
+
+    {% endblock %}
+</head>
+
+    <body onload="set_background()">
+        <div class="navbar">
+            <a href="/ip"> Inicio </a>
+            <div class="dropdown">
+                <button class="dropbtn"> Buscar
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="/ip"> ip</a>
+                    <a href="/ips"> ips </a>
+                </div>
+            </div>
+            <a href="/about"> Sobre </a>
+        </div>
+        {% block content %}
+
+        {% endblock %}
+
+</body>
+</html>

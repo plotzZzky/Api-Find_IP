@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+    {% block title %} Buscar Ips {% endblock %}
+
+    {% block content %}
+
+        <div class="content">
+            <h1 class="title"> Buscar multiplos ips: </h1>
+            <form method="POST" action="/ips/" enctype="multipart/form-data" >
+                {% csrf_token %}
+                <input type="file" name="file" style="display: none;" id="selectedFile" onchange="this.form.submit()">
+                <input type="button" value="Procurar txt" onclick="document.getElementById('selectedFile').click();" />
+            </form>
+        {% block table %}
+            {% if data %}
+                <table style="width:100%" >
+                    <thead>
+                        <tr>
+                            <th>Ip</th>
+                            <th>Pais</th>
+                            <th>Cidade</th>
+                            <th>Isp</th>
+                            <th>Timezone</th>
+                      </tr>
+                    </thead>
+                {% for item in data %}
+                    <tbody>
+                        <tr>
+                            <td>{{ item.query }}</td>
+                            <td>{{ item.country }}</td>
+                            <td>{{ item.city }}</td>
+                            <td>{{ item.isp }}</td>
+                            <td>{{ item.timezone }}</td>
+                        </tr>
+                    </tbody>
+                {% endfor %}
+                </table>
+            {% endif %}
+        {% endblock %}
+        </div>
+    {% endblock %}
